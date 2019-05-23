@@ -22,15 +22,36 @@
 # Test.assert_equals(order_weight("2000 10003 1234000 44444444 9999 11 11 22 123"), "11 11 2000 10003 22 123 1234000 44444444 9999")
 
 
+dt=[]
 def order_weight(strng):
-	a=[]
-	res=0
 	for x in strng.split():
+		res=0
 		for i in x:
 			res = res + int(i)
-		a.append(res)
-	print a
+		dt.append((x,res))
+	# print dt
+	dt.sort(key = lambda x: (x[1],x[0]))  
+	# print dt[3][0]
+	return ' '.join(x[0] for x in dt)
 
-order_weight("103 123")
 # order_weight("103 123 4444 99 2000")
-# order_weight("2000 10003 1234000 44444444 9999 11 11 22 123")
+# print order_weight("2000 10003 1234000 44444444 9999 11 11 22 123")
+
+################################
+
+def order_weight(_str):
+    return ' '.join(sorted(sorted(_str.split(' ')), key=lambda x: sum(int(c) for c in x)))
+
+################################3
+def sum_string(s):
+    sum = 0
+    for digit in s:
+        sum += int(digit)
+    return sum
+
+def order_weight(strng):
+    # your code
+    initial_list = sorted(strng.split())
+    result = " ".join(sorted(initial_list, key=sum_string))
+    
+    return result
