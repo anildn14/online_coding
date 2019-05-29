@@ -44,8 +44,9 @@ import math
 def is_prime(num):
 	# if 
 	if num > 1:
-		# for n in range(2,int(math.sqrt(num))):
-		for n in range(2,(num/2)+1):
+		for n in range(2,int(math.sqrt(num))+1):
+		# for n in range(2,int(math.ceil(math.sqrt(num)))+1):
+		# for n in range(2,(num/2)+1):
 			# for y in range(2,(n/2)+1):
 			# 	if n % y==0:
 			# 		return False
@@ -58,4 +59,29 @@ print is_prime(-5)
 print is_prime(9)
 print is_prime(524287)
 print int(math.sqrt(10))
-# print is_prime(2147483647)
+print is_prime(2147483647)
+
+
+
+
+# -*- coding: utf-8 -*-
+def is_prime(num):
+    import math
+
+    # There's only one even prime: 2
+    if num < 2    : return False
+    if num == 2   : return True
+    if num %2 == 0: return False
+    """
+    Property:
+        Every number n that is not prime has at least one prime divisor p
+        such 1 < p < square_root(n)
+    """
+    root = int(math.sqrt(num))
+    # We know there's only one even prime, so with that in mind 
+    # we're going to iterate only over the odd numbers plus using the above property
+    # the performance will be improved
+    for i in xrange(3, root+1, 2):
+        if num % i == 0: return False
+
+    return True
