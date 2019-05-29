@@ -24,7 +24,27 @@
 # test.assert_equals(data_reverse(data3),data4)
 
 def data_reverse(data):
-	print len(data)/8
-	for 
+	# print len(data)/8
+	n=[]
+	for i in range((len(data)/8),0,-1):
+		# print data[8*(i-1):8*(i)]
+		# print ''.join(data[8*(i-1):8*(i)])
+		 # ''.join(str(data[8*(i-1):8*i]))
+		n.extend(data[8*(i-1):8*i])
+	# print [x for x in n[::-1]]
+	print n
+	# return [(data[8*(i-1):8*i] for i in range((len(data)/8),0,-1)]
+print data_reverse([1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,0,1,0,1,0,1,0])
 
-data_reverse([1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,0,1,0,1,0,1,0])
+
+def data_reverse(data):
+  res = []
+  
+  for i in range(len(data)-8, -1, -8):
+    res.extend(data[i:i+8])
+  
+  return res
+
+
+def data_reverse(data):
+    return [b for a in xrange(len(data) - 8, -1, -8) for b in data[a:a + 8]]
