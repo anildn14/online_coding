@@ -26,9 +26,13 @@ for i,j in zip(cur,count):
 	if amount>=i:
 		j=amount//i
 		amount=amount-j*i
-		print (i,j)
+		# print (i,j)
 
-print  "%s cant be splitted further"%amount
+# print  "%s cant be splitted further"%amount
 	
 
-
+li=[[1,2],[3,4],[5,6]]
+for i in li:
+	print i
+	if 2 in i:
+		print i.index(2)
