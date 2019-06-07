@@ -48,11 +48,18 @@ int32_to_ip(5)
 def int32_to_ip(int32):
   bi='{0:2b}'.format(int32).strip().zfill(32)
   return '{}.{}.{}.{}'.format(int(bi[0:8],2),int(bi[8:16],2),int(bi[16:24],2),int(bi[24:32],2))
+# print int32_to_ip(5)
 
 
 def int32_to_ip(int32):
     return '{}.{}.{}.{}'.format(*int32.to_bytes(4, 'big'))
+print int32_to_ip(5)
 
+
+
+from ipaddress import IPv4Address
+from ipaddress import ip_address
 
 def int32_to_ip(int32):
     return str(IPv4Address(int32))
+# print int32_to_ip(5)
