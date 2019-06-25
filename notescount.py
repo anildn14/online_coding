@@ -217,72 +217,83 @@
 #     print("No") 
 
 
-import json
+# import json
 
-# a Python object (dict):
-x = {
-  "name": "John",
-  "age": 30,
-  "city": "New York"
-}
+# # a Python object (dict):
+# x = {
+#   "name": "John",
+#   "age": 30,
+#   "city": "New York"
+# }
 
-# convert into JSON:
-y = json.dumps(x)
+# # convert into JSON:
+# y = json.dumps(x)
 
-# the result is a JSON string:
-print(y)
-print(type(y))
-
-
-import json
-
-# some JSON:
-x =  '{ "name":"John", "age":30, "city":"New York"}'
-
-# parse x:
-y = json.loads(x)
-
-# the result is a Python dictionary:
-print(y["age"]),type(y)
-
-x = {"name": "John","age": 30,"city": "New York","status":None}
-print x,type(x)
+# # the result is a JSON string:
+# print(y)
+# print(type(y))
 
 
+# import json
 
-a=[1,2,3,4,5,6,7,8,9]
-b=[3,7,9]
-c=[]
-for x in a:
-	if x in b:
-		pass
-	else:
-		c.append(x)
-print c
+# # some JSON:
+# x =  '{ "name":"John", "age":30, "city":"New York"}'
 
+# # parse x:
+# y = json.loads(x)
 
-# BUBBLESORT
-d=[7,2,6,4,9,1,3,10,5,8]
-# d.sort()
-print "BEFORE SORTING :",d
-n=len(d)
-for i in range(n):
-	for j in range(0,n-i-1):
-		if d[j]>d[j+1]:
-			d[j],d[j+1]=d[j+1],d[j]
-	print d
-print "AFTER SORTING :",d
+# # the result is a Python dictionary:
+# print(y["age"]),type(y)
+
+# x = {"name": "John","age": 30,"city": "New York","status":None}
+# print x,type(x)
 
 
-#SELECTION SORT
-d=[7,2,6,4,9,1,3,10,5,8]
-print "BEFORE SORTING :",d
-for i in range(len(d)):
-	min_idx=i
-	for j in range(i+1,len(d)):
-		if d[min_idx]>d[j]:
-			min_idx=j
-	d[i],d[min_idx]=d[min_idx],d[i]
-	print d
-print "AFTER SORTING :",d
 
+# a=[1,2,3,4,5,6,7,8,9]
+# b=[3,7,9]
+# c=[]
+# for x in a:
+# 	if x in b:
+# 		pass
+# 	else:
+# 		c.append(x)
+# print c
+
+
+# # BUBBLESORT
+# d=[7,2,6,4,9,1,3,10,5,8]
+# # d.sort()
+# print "BEFORE SORTING :",d
+# n=len(d)
+# for i in range(n):
+# 	for j in range(0,n-i-1):
+# 		if d[j]>d[j+1]:
+# 			d[j],d[j+1]=d[j+1],d[j]
+# 	print d
+# print "AFTER SORTING :",d
+
+
+# #SELECTION SORT
+# d=[7,2,6,4,9,1,3,10,5,8]
+# print "BEFORE SORTING :",d
+# for i in range(len(d)):
+# 	min_idx=i
+# 	for j in range(i+1,len(d)):
+# 		if d[min_idx]>d[j]:
+# 			min_idx=j
+# 	d[i],d[min_idx]=d[min_idx],d[i]
+# 	print d
+# print "AFTER SORTING :",d
+
+# Get Key of Dictionary using Value:
+mydict = {'george':16,'amber':19}
+print "mydict.values()).index(16) :",list(mydict.values()).index(16)
+print list(mydict.keys())
+print list(mydict.keys())[list(mydict.values()).index(16)]
+
+
+l=[1,2,3,4,5]
+ld={}
+for i in l:
+	
